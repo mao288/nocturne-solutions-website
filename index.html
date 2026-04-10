@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/diobgaxfl/image/upload/q_auto/f_auto/v1775828240/ns-imagotipo_bqbznv.svg">
+  <link rel="apple-touch-icon" href="https://res.cloudinary.com/diobgaxfl/image/upload/q_auto/f_auto/v1775828240/ns-imagotipo_bqbznv.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nocturne Solutions | Donde la creatividad se vuelve c&oacute;digo</title>
   <meta name="description" content="Nocturne Solutions — Desarrollo web a medida para todo tipo de negocios. No solo colocamos informaci&oacute;n, captamos la atenci&oacute;n de tus visitantes.">
@@ -80,15 +82,14 @@
     }
 
     .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
+      display: flex;
+      align-items: center;
       text-decoration: none;
-      letter-spacing: 0.02em;
+      opacity: 0.92;
+      transition: opacity 0.3s;
     }
 
-    .nav-logo span { color: var(--accent-steel); }
+    .nav-logo:hover { opacity: 1; }
 
     .nav-links {
       display: flex;
@@ -244,6 +245,11 @@
       position: relative;
       z-index: 1;
       max-width: 800px;
+    }
+
+    .hero-logo-svg {
+      opacity: 0;
+      animation: fadeUp 0.8s 0s var(--ease-out) forwards;
     }
 
     .hero-tag {
@@ -953,7 +959,7 @@
 
   <!-- NAV -->
   <nav id="navbar">
-    <a href="#hero" class="nav-logo">Nocturne<span>.</span></a>
+    <a href="#hero" class="nav-logo"><img src="https://res.cloudinary.com/diobgaxfl/image/upload/q_auto/f_auto/v1775828240/ns-imagotipo_bqbznv.svg" height="44" alt="Nocturne Solutions"></a>
     <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -972,7 +978,8 @@
     </div>
     <div class="container">
       <div class="hero-content">
-        <div class="hero-tag">Nocturne Solutions</div>
+        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/q_auto/f_auto/v1775828241/ns-logotipo_kl4d7x.svg" class="hero-logo-svg" alt="Nocturne Solutions" style="display:block; margin-bottom:2rem; height:150px;">
+
         <h1 class="hero-title">
           Donde la creatividad<br>
           se vuelve <em>c&oacute;digo</em>
