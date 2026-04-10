@@ -1242,9 +1242,7 @@
         </div>
 
         <div class="contact-form reveal reveal-delay-2">
-          <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contacto">
-            <p style="display:none"><label>No llenes esto: <input name="bot-field"></label></p>
+          <form id="contact-form" onsubmit="return sendWhatsApp(event)">
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label">Nombre</label>
@@ -1395,6 +1393,26 @@
         window.open(url, '_blank');
       });
     });
+
+    // Contact form to WhatsApp
+    function sendWhatsApp(e) {
+      e.preventDefault();
+      var form = document.getElementById('contact-form');
+      var nombre = form.querySelector('[name="nombre"]').value;
+      var email = form.querySelector('[name="email"]').value;
+      var tipo = form.querySelector('[name="tipo-negocio"]').value;
+      var mensaje = form.querySelector('[name="mensaje"]').value;
+
+      var text = '*Nuevo mensaje desde nocturnesolutions.com*\n\n'
+        + '*Nombre:* ' + nombre + '\n'
+        + '*Email:* ' + email + '\n'
+        + '*Tipo de negocio:* ' + tipo + '\n\n'
+        + '*Mensaje:*\n' + mensaje;
+
+      var url = 'https://wa.me/5217223622800?text=' + encodeURIComponent(text);
+      window.open(url, '_blank');
+      return false;
+    }
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
