@@ -2,13 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/diobgaxfl/image/upload/q_auto/f_auto/v1775828240/ns-imagotipo_bqbznv.svg">
-  <link rel="apple-touch-icon" href="https://res.cloudinary.com/diobgaxfl/image/upload/q_auto/f_auto/v1775828240/ns-imagotipo_bqbznv.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nocturne Solutions | Donde la creatividad se vuelve c&oacute;digo</title>
   <meta name="description" content="Nocturne Solutions — Desarrollo web a medida para todo tipo de negocios. No solo colocamos informaci&oacute;n, captamos la atenci&oacute;n de tus visitantes.">
   <meta property="og:title" content="Nocturne Solutions | Desarrollo Web a Medida">
   <meta property="og:description" content="Donde la creatividad se vuelve c&oacute;digo. Sitios web con alma para todo tipo de negocios.">
+  <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/diobgaxfl/image/upload/q_auto/f_auto/v1775828240/ns-imagotipo_bqbznv.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -85,11 +84,15 @@
       display: flex;
       align-items: center;
       text-decoration: none;
-      opacity: 0.92;
+    }
+
+    .nav-logo-img {
+      height: 32px;
+      width: auto;
       transition: opacity 0.3s;
     }
 
-    .nav-logo:hover { opacity: 1; }
+    .nav-logo-img:hover { opacity: 0.8; }
 
     .nav-links {
       display: flex;
@@ -245,31 +248,24 @@
       position: relative;
       z-index: 1;
       max-width: 800px;
-    }
-
-    .hero-logo-svg {
-      opacity: 0;
-      animation: fadeUp 0.8s 0s var(--ease-out) forwards;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .hero-tag {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--accent);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      justify-content: center;
       opacity: 0;
       animation: fadeUp 0.8s 0.2s var(--ease-out) forwards;
     }
 
-    .hero-tag::before {
-      content: '';
-      width: 32px; height: 1px;
-      background: var(--accent);
+    .hero-logotipo {
+      width: 560px;
+      height: auto;
+      max-width: 80vw;
+      display: block;
     }
 
     .hero-title {
@@ -294,8 +290,8 @@
       font-size: 1.15rem;
       color: var(--text-secondary);
       max-width: 540px;
+      margin: 0 auto 2.5rem auto;
       line-height: 1.8;
-      margin-bottom: 2.5rem;
       opacity: 0;
       animation: fadeUp 0.8s 0.6s var(--ease-out) forwards;
     }
@@ -304,6 +300,7 @@
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+      justify-content: center;
       opacity: 0;
       animation: fadeUp 0.8s 0.8s var(--ease-out) forwards;
     }
@@ -872,13 +869,16 @@
     }
 
     .footer-logo {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--text-primary);
+      display: flex;
+      align-items: center;
     }
 
-    .footer-logo span { color: var(--accent-steel); }
+    .footer-firma {
+      height: 50px;
+      width: auto;
+      border-radius: 4px;
+      mix-blend-mode: lighten;
+    }
 
     .footer-copy {
       font-size: 0.82rem;
@@ -959,7 +959,7 @@
 
   <!-- NAV -->
   <nav id="navbar">
-    <a href="#hero" class="nav-logo"><img src="https://res.cloudinary.com/diobgaxfl/image/upload/q_auto/f_auto/v1775828240/ns-imagotipo_bqbznv.svg" height="44" alt="Nocturne Solutions"></a>
+    <a href="#hero" class="nav-logo"><img src="https://res.cloudinary.com/diobgaxfl/image/upload/q_auto/f_auto/v1775828240/ns-imagotipo_bqbznv.svg" alt="Nocturne Solutions" class="nav-logo-img"></a>
     <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -978,8 +978,7 @@
     </div>
     <div class="container">
       <div class="hero-content">
-        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/q_auto/f_auto/v1775828241/ns-logotipo_kl4d7x.svg" class="hero-logo-svg" alt="Nocturne Solutions" style="display:block; margin-bottom:2rem; height:150px;">
-
+        <div class="hero-tag"><img src="https://res.cloudinary.com/diobgaxfl/image/upload/q_auto/f_auto/v1775828241/ns-logotipo_kl4d7x.svg" alt="Nocturne Solutions" class="hero-logotipo"></div>
         <h1 class="hero-title">
           Donde la creatividad<br>
           se vuelve <em>c&oacute;digo</em>
@@ -1239,31 +1238,26 @@
                 <div class="contact-method-value" id="email-text"></div>
               </div>
             </a>
-            <a href="#" class="contact-method" style="opacity: 0.5; pointer-events: none;">
-              <div class="contact-method-icon">&#128247;</div>
-              <div>
-                <div class="contact-method-label">Instagram</div>
-                <div class="contact-method-value">Pr&oacute;ximamente</div>
-              </div>
-            </a>
           </div>
         </div>
 
         <div class="contact-form reveal reveal-delay-2">
-          <form action="#" method="POST">
+          <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contacto">
+            <p style="display:none"><label>No llenes esto: <input name="bot-field"></label></p>
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label">Nombre</label>
-                <input type="text" class="form-input" placeholder="Tu nombre" required>
+                <input type="text" name="nombre" class="form-input" placeholder="Tu nombre" required>
               </div>
               <div class="form-group">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-input" placeholder="correo@ejemplo.com" required>
+                <input type="email" name="email" class="form-input" placeholder="correo@ejemplo.com" required>
               </div>
             </div>
             <div class="form-group">
               <label class="form-label">Tipo de negocio</label>
-              <select class="form-input" required>
+              <select name="tipo-negocio" class="form-input" required>
                 <option value="" disabled selected>Selecciona una opci&oacute;n</option>
                 <option>Restaurante / Gastronom&iacute;a</option>
                 <option>Arquitectura / Dise&ntilde;o de interiores</option>
@@ -1276,7 +1270,7 @@
             </div>
             <div class="form-group">
               <label class="form-label">Cu&eacute;ntame sobre tu proyecto</label>
-              <textarea class="form-textarea" placeholder="&iquest;Qu&eacute; necesitas? &iquest;Cu&aacute;l es tu visi&oacute;n? &iquest;Tienes fecha l&iacute;mite?"></textarea>
+              <textarea name="mensaje" class="form-textarea" placeholder="&iquest;Qu&eacute; necesitas? &iquest;Cu&aacute;l es tu visi&oacute;n? &iquest;Tienes fecha l&iacute;mite?"></textarea>
             </div>
             <button type="submit" class="btn btn-primary form-submit">Enviar mensaje</button>
           </form>
@@ -1288,10 +1282,9 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-content">
-      <div class="footer-logo">Nocturne<span>.</span></div>
+      <div class="footer-logo"><img src="https://res.cloudinary.com/diobgaxfl/image/upload/q_auto/f_auto/v1775849951/ns-firma-email_nkyquw.jpg" alt="Nocturne Solutions" class="footer-firma"></div>
       <div class="footer-copy">&copy; 2025 Nocturne Solutions. Todos los derechos reservados.</div>
       <div class="footer-socials">
-        <a href="#" aria-label="Instagram" title="Pr&oacute;ximamente">IG</a>
         <a id="footer-email" href="#" aria-label="Email">@</a>
         <a id="footer-wa" href="#" target="_blank" aria-label="WhatsApp">WA</a>
       </div>
